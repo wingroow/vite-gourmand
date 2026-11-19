@@ -3,15 +3,7 @@ require 'config.php';
 $themes  = $pdo->query("SELECT theme_id, libelle FROM theme ORDER BY libelle")->fetchAll();
 $regimes = $pdo->query("SELECT regime_id, libelle FROM regime ORDER BY libelle")->fetchAll();
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nos menus - Vite &amp; Gourmand</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php $titre = 'Nos menus'; require 'header.php'; ?>
 <main class="container py-4">
   <h1>Nos menus</h1>
 
@@ -61,5 +53,4 @@ async function chargerMenus() {
 form.addEventListener('input', chargerMenus);
 chargerMenus();
 </script>
-</body>
-</html>
+<?php require 'footer.php'; ?>

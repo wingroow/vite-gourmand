@@ -1,4 +1,13 @@
 <?php
+// Session securisee (cookie inaccessible au JavaScript, envoye seulement sur le site)
+if (session_status() === PHP_SESSION_NONE) {
+    session_set_cookie_params([
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    ]);
+    session_start();
+}
 // Connexion PDO a la base MySQL. Modifier les identifiants si besoin.
 $host = 'localhost';
 $db   = 'vite_gourmand';

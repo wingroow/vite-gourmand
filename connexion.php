@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'config.php';
 
 if (empty($_SESSION['csrf'])) { $_SESSION['csrf'] = bin2hex(random_bytes(32)); }
@@ -25,14 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erreur = 'Identifiants incorrects ou compte désactivé.';
 }
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connexion - Vite &amp; Gourmand</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php $titre = 'Connexion'; require 'header.php'; ?>
 <main class="container py-4" style="max-width:500px">
   <h1>Connexion</h1>
   <?php if ($erreur): ?><div class="alert alert-danger" role="alert"><?= $e($erreur) ?></div><?php endif; ?>
@@ -44,5 +36,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </form>
   <p class="mt-3"><a href="inscription.php">Créer un compte</a></p>
 </main>
-</body>
-</html>
+<?php require 'footer.php'; ?>

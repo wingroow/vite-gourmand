@@ -21,14 +21,7 @@ $plats->execute([':id' => $id]);
 $labels = ['entree' => 'Entrée', 'plat' => 'Plat', 'dessert' => 'Dessert'];
 $e = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?= $e($menu['titre']) ?> - Vite &amp; Gourmand</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php $titre = $menu['titre']; require 'header.php'; ?>
 <main class="container py-4">
   <a href="menus.php">&larr; Retour aux menus</a>
   <h1 class="mt-3"><?= $e($menu['titre']) ?></h1>
@@ -50,7 +43,6 @@ $e = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
     <?php endforeach; ?>
   </ul>
 
-  <a class="btn btn-primary" href="commande.php?menu_id=<?= (int)$menu['menu_id'] ?>">Commander</a>
+  <p class="alert alert-info" role="status">La commande en ligne sera bientôt disponible. En attendant, contactez-nous pour commander ce menu.</p>
 </main>
-</body>
-</html>
+<?php require 'footer.php'; ?>

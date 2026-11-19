@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'config.php';
 
 if (empty($_SESSION['csrf'])) { $_SESSION['csrf'] = bin2hex(random_bytes(32)); }
@@ -37,14 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inscription - Vite &amp; Gourmand</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php $titre = 'Inscription'; require 'header.php'; ?>
 <main class="container py-4" style="max-width:600px">
   <h1>Créer un compte</h1>
   <?php if ($ok): ?>
@@ -65,5 +57,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
   <?php endif; ?>
 </main>
-</body>
-</html>
+<?php require 'footer.php'; ?>
