@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <?php if ($erreur): ?><div class="alert alert-danger" role="alert"><?= $e($erreur) ?></div><?php endif; ?>
   <form method="post">
     <input type="hidden" name="csrf" value="<?= $e($_SESSION['csrf']) ?>">
-    <div class="mb-3"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" required></div>
-    <div class="mb-3"><label class="form-label" for="password">Mot de passe</label><input class="form-control" id="password" name="password" type="password" required></div>
-    <button class="btn btn-primary" type="submit">Se connecter</button>
+    <div class="mb-3"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
+    <div class="mb-3"><label class="form-label" for="password">Mot de passe</label><input class="form-control" id="password" name="password" type="password" autocomplete="current-password" required></div>
+    <button class="btn btn-primary w-100" type="submit">Se connecter</button>
   </form>
   <p class="mt-3"><a href="inscription.php">Créer un compte</a></p>
 </main>

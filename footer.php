@@ -5,7 +5,7 @@ $e = $e ?? fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
 ?>
 </div>
 <footer class="vg-footer mt-5 py-4">
-  <div class="container d-md-flex justify-content-between">
+  <div class="container d-md-flex justify-content-between text-center text-md-start">
     <div>
       <h2 class="h6">Horaires</h2>
       <ul class="list-unstyled small mb-3 mb-md-0">

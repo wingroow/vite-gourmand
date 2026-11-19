@@ -25,3 +25,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .vg-footer { background-color: var(--vg-texte); color: var(--vg-creme); }
 .vg-footer h2 { color: var(--vg-or); }
 .vg-footer a { color: var(--vg-creme); }
+
+/* Mobile : zones tactiles d'au moins 44 px, lisibilite */
+.btn, .form-control, .form-select { min-height: 44px; }
+.form-control, .form-select { font-size: 1rem; } /* evite le zoom automatique sur iPhone */
+.vg-header .nav-link { padding: .75rem 0; }
+.vg-footer a { display: inline-block; padding: .5rem .25rem; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 767.98px) {
+  h1 { font-size: 1.75rem; }
+  main.container { padding-left: 1rem; padding-right: 1rem; }
+  .vg-header .navbar-collapse { border-top: 1px solid rgba(255,255,255,.25); margin-top: .5rem; }
+  .card-body { padding: 1rem; }
+  .lead { font-size: 1.1rem; }
+}
+@media (min-width: 576px) { .w-sm-auto { width: auto !important; } }
+.vg-header .navbar { padding-left: 1rem; padding-right: 1rem; }
+.btn-outline-primary { --bs-btn-color: #7B1E3A; --bs-btn-border-color: #7B1E3A; --bs-btn-hover-bg: #7B1E3A; --bs-btn-hover-border-color: #7B1E3A; --bs-btn-hover-color: #fff; --bs-btn-active-bg: #5E1229; --bs-btn-active-border-color: #5E1229; }

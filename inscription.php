@@ -45,15 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php foreach ($erreurs as $err): ?><div class="alert alert-danger" role="alert"><?= $e($err) ?></div><?php endforeach; ?>
     <form method="post">
       <input type="hidden" name="csrf" value="<?= $e($_SESSION['csrf']) ?>">
-      <div class="mb-3"><label class="form-label" for="nom">Nom</label><input class="form-control" id="nom" name="nom" required value="<?= $e($_POST['nom'] ?? '') ?>"></div>
-      <div class="mb-3"><label class="form-label" for="prenom">Prénom</label><input class="form-control" id="prenom" name="prenom" required value="<?= $e($_POST['prenom'] ?? '') ?>"></div>
-      <div class="mb-3"><label class="form-label" for="telephone">Téléphone (GSM)</label><input class="form-control" id="telephone" name="telephone" type="tel" required value="<?= $e($_POST['telephone'] ?? '') ?>"></div>
-      <div class="mb-3"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" required value="<?= $e($_POST['email'] ?? '') ?>"></div>
-      <div class="mb-3"><label class="form-label" for="adresse">Adresse postale</label><input class="form-control" id="adresse" name="adresse" required value="<?= $e($_POST['adresse'] ?? '') ?>"></div>
-      <div class="mb-3"><label class="form-label" for="ville">Ville</label><input class="form-control" id="ville" name="ville" required value="<?= $e($_POST['ville'] ?? '') ?>"></div>
-      <div class="mb-3"><label class="form-label" for="password">Mot de passe</label><input class="form-control" id="password" name="password" type="password" required aria-describedby="aide">
+      <div class="mb-3"><label class="form-label" for="nom">Nom</label><input class="form-control" id="nom" name="nom" autocomplete="family-name" required value="<?= $e($_POST['nom'] ?? '') ?>"></div>
+      <div class="mb-3"><label class="form-label" for="prenom">Prénom</label><input class="form-control" id="prenom" name="prenom" autocomplete="given-name" required value="<?= $e($_POST['prenom'] ?? '') ?>"></div>
+      <div class="mb-3"><label class="form-label" for="telephone">Téléphone (GSM)</label><input class="form-control" id="telephone" name="telephone" type="tel" autocomplete="tel" required value="<?= $e($_POST['telephone'] ?? '') ?>"></div>
+      <div class="mb-3"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required value="<?= $e($_POST['email'] ?? '') ?>"></div>
+      <div class="mb-3"><label class="form-label" for="adresse">Adresse postale</label><input class="form-control" id="adresse" name="adresse" autocomplete="street-address" required value="<?= $e($_POST['adresse'] ?? '') ?>"></div>
+      <div class="mb-3"><label class="form-label" for="ville">Ville</label><input class="form-control" id="ville" name="ville" autocomplete="address-level2" required value="<?= $e($_POST['ville'] ?? '') ?>"></div>
+      <div class="mb-3"><label class="form-label" for="password">Mot de passe</label><input class="form-control" id="password" name="password" type="password" autocomplete="new-password" required aria-describedby="aide">
         <div id="aide" class="form-text">10 caractères minimum, avec majuscule, minuscule, chiffre et caractère spécial.</div></div>
-      <button class="btn btn-primary" type="submit">S'inscrire</button>
+      <button class="btn btn-primary w-100" type="submit">S'inscrire</button>
     </form>
   <?php endif; ?>
 </main>
